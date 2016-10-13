@@ -16,6 +16,7 @@ int copyFile(FILE *f, char *target[], int maxLineCnt) {
     char temp[100];
     for(i = 0; i < maxLineCnt; i++) {
         if(fgets(temp, 100, f) == NULL) break;
+        target[i]=malloc(strlen(temp)+1);
         strcpy(target[i], temp);
     }
     return i + 1;
